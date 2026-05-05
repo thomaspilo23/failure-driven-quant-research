@@ -34,7 +34,7 @@ Each case study is a post-mortem of a failure that changed the direction of the 
 
 ```
 /case-studies      — Failure post-mortems: context, breakdown, investigation, realization
-/framework         — Decision-making and evaluation principles (planned)
+/framework         — Failure taxonomy, feasibility checklist, kill criteria, constraint-first research
 /timeline          — Chronological map of research phases and pivots (planned)
 /tools             — Diagnostic and analysis utilities (planned)
 /assets            — Supporting visuals (planned)
