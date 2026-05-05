@@ -1,53 +1,53 @@
 # Failure-Driven Quant Research
 
-> Failure-driven research for quantitative systems.
-
 ---
 
 ## What This Is
 
-Most quant portfolios showcase wins. This one documents the failures — the dead ends, the subtle errors, and the structural lessons that only emerge when a system breaks in production.
+Most research portfolios document what worked. This one documents what didn't — and why that distinction matters.
 
-The goal is not to prove competence through polished results. It is to demonstrate **research process, diagnostic rigor, and the ability to learn from failure at speed** — which is where durable edge actually comes from.
+Systematic quantitative research fails in specific, instructive ways. Signals that look real in backtests disappear under live costs. Execution systems pass every test and produce zero actions. Mathematically sound approaches prove infeasible before any model is trained. Infrastructure assumptions that hold in development break in production. Each failure type has a structure, and that structure is learnable.
+
+The goal of this repository is not to demonstrate correctness through polished results. It is to demonstrate research process: how problems are diagnosed, how assumptions are tested, how direction changes when evidence demands it. These are the competencies that determine whether a systematic research program produces durable results — and they are rarely visible in portfolios that show only the outcomes.
+
+All case studies are abstracted and sanitized. No proprietary logic, implementation details, or live system specifics are included.
+
+---
+
+## Case Studies
+
+Each case study is a post-mortem of a failure that changed the direction of the research. The emphasis is on the investigation and the realization — not the fix.
+
+| | Case | Type | One-Line Summary |
+|---|---|---|---|
+| [→](case-studies/model-that-never-traded/) | The Model That Never Traded | Execution | A trained model produced zero actions for months because of a one-line index error at the integration boundary. |
+| [→](case-studies/when-the-math-says-no/) | When the Math Says No | Mathematical Limitation | An arithmetic audit proved an entire research direction infeasible before any model could make it work. |
+| [→](case-studies/four-experiments-zero-progress/) | Four Experiments. Zero Progress. One Correct Answer. | Model Failure | After four engineering solutions failed identically, investigation revealed the problem was structural — not fixable from inside the system. |
+| [→](case-studies/the-wrong-account/) | The Wrong Account | Execution | A live test succeeded in every measurable way while routing actions to the wrong destination. |
+| [→](case-studies/the-cost-assumption/) | The Cost Assumption | Data Failure | A strategy with a real edge appeared viable against estimated costs and unviable against measured ones. |
+| [→](case-studies/rendering-bottleneck/) | The Rendering Bottleneck | Infrastructure | A theoretically sound visual encoding approach failed because generating the representation consumed the compute budget before the model could use it. |
+| [→](case-studies/more-features-less-signal/) | More Features, Less Signal | Model Failure | A feature set assembled from thirty well-understood indicators carried less information than a set of five. |
 
 ---
 
 ## Structure
 
 ```
+/case-studies      — Failure post-mortems: context, breakdown, investigation, realization
+/framework         — Decision-making and evaluation principles that emerged from failure
 /timeline          — Chronological map of research phases and pivots
-/case-studies      — Sanitized failure post-mortems, each with root cause analysis
-/framework         — The decision-making and evaluation framework that emerged from failure
-/tools             — Lightweight diagnostic and analysis utilities
-/assets            — Charts, diagrams, supporting visuals
+/tools             — Diagnostic and analysis utilities
+/assets            — Supporting visuals
 ```
-
----
-
-## Case Studies
-
-| Study | Domain | Core Failure |
-|-------|--------|--------------|
-| [indicator-overload](case-studies/indicator-overload/) | Signal design | Too many correlated features, no signal |
-| [intraday-friction](case-studies/intraday-friction/) | Execution modeling | Ignored spread + slippage, backtest ≠ live |
-| [image-based-ml-compute-failure](case-studies/image-based-ml-compute-failure/) | ML architecture | GPU memory constraints broke training pipeline |
-| [tabular-model-selection-failure](case-studies/tabular-model-selection-failure/) | Model selection | Overfit to validation set, GBDT vs NN choice |
-| [regime-calendar-dependency](case-studies/regime-calendar-dependency/) | Regime detection | Model trained on one macro regime, calendar artifacts |
-
----
-
-## Framework
-
-The [framework](framework/) section distills the evaluation and decision-making rules that survived contact with these failures: what to test first, how to diagnose a broken backtest, when to kill a strategy.
 
 ---
 
 ## Principles
 
-- No data snooping. Walk-forward only.
-- Failure is documented, not hidden.
-- Synthetic and anonymized data only — no live system details.
-- Every case study has a root cause, not just a symptom.
+- Every case study identifies a root cause, not just a symptom.
+- Failures are documented with the same rigor applied to successes.
+- No data snooping. Walk-forward validation throughout.
+- All material is abstracted — no live system details, no proprietary implementation.
 
 ---
 
