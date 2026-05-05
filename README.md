@@ -23,7 +23,7 @@ Each case study is a post-mortem of a failure that changed the direction of the 
 | [→](case-studies/model-that-never-traded/) | The Model That Never Traded | Execution | A trained model produced zero actions for months because of a one-line index error at the integration boundary. |
 | [→](case-studies/when-the-math-says-no/) | When the Math Says No | Mathematical Limitation | An arithmetic audit proved an entire research direction infeasible before any model could make it work. |
 | [→](case-studies/four-experiments-zero-progress/) | Four Experiments. Zero Progress. One Correct Answer. | Model Failure | After four engineering solutions failed identically, investigation revealed the problem was structural — not fixable from inside the system. |
-| [→](case-studies/the-wrong-account/) | The Wrong Account | Execution | A live test succeeded in every measurable way while routing actions to the wrong destination. |
+| [→](case-studies/the-wrong-account/) | The Wrong Account | Execution | A system test succeeded in every measurable way while routing actions to the wrong destination. |
 | [→](case-studies/the-cost-assumption/) | The Cost Assumption | Data Failure | A strategy with a real edge appeared viable against estimated costs and unviable against measured ones. |
 | [→](case-studies/rendering-bottleneck/) | The Rendering Bottleneck | Infrastructure | A theoretically sound visual encoding approach failed because generating the representation consumed the compute budget before the model could use it. |
 | [→](case-studies/more-features-less-signal/) | More Features, Less Signal | Model Failure | A feature set assembled from thirty well-understood indicators carried less information than a set of five. |
@@ -34,10 +34,10 @@ Each case study is a post-mortem of a failure that changed the direction of the 
 
 ```
 /case-studies      — Failure post-mortems: context, breakdown, investigation, realization
-/framework         — Decision-making and evaluation principles that emerged from failure
-/timeline          — Chronological map of research phases and pivots
-/tools             — Diagnostic and analysis utilities
-/assets            — Supporting visuals
+/framework         — Decision-making and evaluation principles (planned)
+/timeline          — Chronological map of research phases and pivots (planned)
+/tools             — Diagnostic and analysis utilities (planned)
+/assets            — Supporting visuals (planned)
 ```
 
 ---
@@ -46,7 +46,6 @@ Each case study is a post-mortem of a failure that changed the direction of the 
 
 - Every case study identifies a root cause, not just a symptom.
 - Failures are documented with the same rigor applied to successes.
-- No data snooping. Walk-forward validation throughout.
 - All material is abstracted — no live system details, no proprietary implementation.
 
 ---
