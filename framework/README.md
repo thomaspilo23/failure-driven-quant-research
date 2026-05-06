@@ -6,41 +6,41 @@ This section abstracts the failure patterns documented in the case studies into 
 
 ## Why This Exists
 
-A case study documents an incident. A framework documents a pattern. The distinction matters because incidents are specific — they describe a failure in a particular context with a particular mechanism — while patterns are structural. They appear across different incidents, different systems, and different domains, because they reflect a property of how complex systems fail rather than a property of any individual failure.
+A case study documents an incident. A framework documents a pattern. The distinction matters because incidents are specific and bounded — they describe a failure in a particular context with a particular mechanism — while patterns are structural. They appear across different incidents, different systems, and different domains, because they reflect a property of how complex systems fail, not a property of any individual failure.
 
-The case studies in this repository describe seven distinct failures. Taken individually, each is instructive. Taken together, they reveal patterns that a post-mortem format cannot efficiently express: that certain failure types are inherently harder to detect than others; that some failures are fixable and others are structural; that the sequence in which research is conducted systematically determines which failures are caught early and which compound into expensive dead ends.
+The case studies in this repository describe seven distinct failures. Taken individually, each is instructive. Taken together, they reveal patterns that a post-mortem format cannot efficiently express: that certain failure types are inherently harder to detect than others; that some failures are fixable and others are structural; that the sequence in which research is conducted determines which failures surface early and which compound into expensive dead ends.
 
-This framework is the attempt to make those patterns explicit.
+A repeated failure is not repeated evidence of bad execution. It is repeated evidence that the underlying assumption may be wrong.
+
+This framework makes those patterns explicit — precisely enough to be recognizable, but general enough to apply beyond the incidents that generated them.
 
 ---
 
 ## What This Is Not
 
-This framework does not describe how to build a system. It does not describe how to avoid all failure — some failures are only identifiable after they occur. It does not generalize from these failures to claims about research methodology in other domains. The scope is deliberately narrow: the failure patterns documented here, abstracted to the level where they are recognizable across contexts without losing the precision that makes them useful.
+This framework does not describe how to build a system. It does not claim to prevent all failure — some failures are only identifiable after they occur. It does not generalize from these specific failures to universal claims about research methodology. The scope is narrow by design: the failure patterns observed here, abstracted to the level where the mechanism is visible without the specifics that make it system-dependent.
 
 ---
 
 ## Components
 
 **[failure-taxonomy.md](failure-taxonomy.md)**
-A classification of the failure types observed, with definitions, detection difficulty, and the distinction between fixable and structural failures. Provides vocabulary for the other documents.
+Five failure types with strict definitions, detection difficulty, typical misdiagnosis, and the fixable/structural classification. Establishes vocabulary used throughout the other documents.
 
 **[feasibility-checklist.md](feasibility-checklist.md)**
-A structured set of tests to perform before building a model or committing to a research direction. Each test targets a specific failure mode that, historically, was not caught until after significant work had been invested.
+Structured tests to perform before committing to a research direction. Each targets a specific failure mode that was not caught until after significant work had been invested. Includes the Failure of Overlap Rule — the mathematical condition under which a direction is infeasible regardless of model quality.
 
 **[kill-criteria.md](kill-criteria.md)**
-Conditions under which continued work on a research direction should stop. Includes signals that distinguish productive iteration from structural impasse, and hard decision rules derived from failure patterns.
+Conditions under which continued work must stop. Distinguishes productive iteration from structural impasse. Includes the Escalation Rule — how to correctly update beliefs when multiple independent approaches fail identically.
 
 **[constraint-first-research.md](constraint-first-research.md)**
-The sequencing principle that emerges from all of the above: why beginning with constraints rather than models changes which failures are caught, when they are caught, and what the cost of catching them is.
+The sequencing principle that emerges from the above: why addressing constraints before models changes which failures are caught, when they are caught, and what catching them costs.
 
 ---
 
 ## How to Use This
 
-Read the case studies before reading this section. The framework will be abstract without the concrete incidents behind it. Read the taxonomy first — it establishes the vocabulary used in the other documents. The feasibility checklist and kill criteria are operational; they are written to be applied, not just read.
-
-The framework is not a guarantee. It is a structured record of how these specific failures could have been caught earlier, expressed at a level of generality that makes them applicable to future research directions.
+Read the case studies before this section. The framework will be abstract without the concrete incidents behind it. Read the taxonomy first — it establishes vocabulary used in the other documents. The feasibility checklist and kill criteria are operational and written to be applied.
 
 ---
 
